@@ -1,0 +1,81 @@
+<div id="login-card" *ngIf="logform">
+   
+    <table id="log-table">
+         <tr>
+             <th>Email</th>
+             <td><input type="text" [(ngModel)]="email" ></td>
+         </tr>
+         <tr>
+            <th>Date of Birth</th>
+            <td><input type="date" [(ngModel)]="dateOfBirth" name="dateOfBirth"></td>
+        </tr>
+         <!-- <tr>
+             <th>Password</th>
+             <td><input type="password" (ngModel)="password"></td>
+         </tr> -->
+         <tr>         
+             <td colspan=2 
+                 style="text-align:center"><button  (click)="login()">Login</button></td>
+         </tr>
+         <tr>
+             
+             <td colspan=2 
+                 style="text-align:center; color: rgb(44, 45, 44)" (click)="toggle()">Not Registered yet? Click here</td>
+         </tr>
+    </table>
+    <div class="errors">{{error}}</div>
+    
+</div>
+
+
+<div id="login-card" *ngIf="!logform">
+    
+        <table id="log-table">
+             <tr>
+                 <th>Patient Name</th>
+                 <td><input type="text" [(ngModel)]="rpatientname"></td>
+             </tr>
+             <!-- <tr>
+                 <th>Password</th>
+                 <td><input type="password" (ngModel)="rpassword"></td>
+             </tr> -->
+
+             <!-- <tr>
+                <th>Verify Password</th>
+                <td><input type="password" (ngModel)="vpassword"></td>
+            </tr> -->
+
+            <tr>
+                <th>Email</th>
+                <td> <input type="text" [(ngModel)]="remail"></td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td> <input type="text" [(ngModel)]="rmobilenumber"></td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td><input type="date" [(ngModel)]="rdateOfBirth" name="rdateOfBirth"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>
+                    <select [(ngModel)]="rgender" name="rgender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                 <td colspan=2 
+                     style="text-align:center"><button (click)="register()">Register</button></td>
+                     <!-- You Have successfully registered {{result}} -->
+            </tr>
+             <tr>
+                 
+                 <td colspan=2 
+                     style="text-align:center; color: rgb(37, 37, 37)" (click)="toggle()">Not Registered yet? Click here</td>
+             </tr>
+        </table>
+        <div class="errors">{{rerror}}</div>
+</div>
